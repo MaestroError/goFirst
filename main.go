@@ -114,3 +114,64 @@ func standardLibrary() {
 
 	fmt.Println(sort.SearchStrings(names, "gh"))
 }
+
+func loops() {
+	x := 0
+
+	// while
+	for x < 5 {
+		fmt.Println("value of x:", x)
+		x++
+	}
+
+	// for
+	for i := 0; i < 5; i++ {
+		fmt.Println("Value of i:", i)
+	}
+
+	// foreach
+	names := []string{"revaz", "tamar", "alex"}
+	for i := 0; i < len(names); i++ {
+		fmt.Println(names[i])
+	}
+
+	// for in
+	for index, value := range names {
+		fmt.Printf("Index of %v is %v \n", value, index)
+	}
+	// without index
+	for _, value := range names {
+		fmt.Printf("value is %v \n", value)
+	}
+}
+
+func boolsAndConditionals() {
+	age := 45
+
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 45)
+	fmt.Println(age != 50)
+
+	if age < 30 {
+		fmt.Println("age is less than 30")
+	} else if age < 40 {
+		fmt.Println("age is less than 40")
+	} else {
+		fmt.Println("age is more than 40")
+	}
+
+	names := []string{"revaz", "tamar", "alex", "maestro"}
+
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue
+		}
+		if index > 2 {
+			fmt.Println("breaking at pos", index)
+			break
+		}
+		fmt.Printf("the value at pos %v is %v \n", index, value)
+	}
+}
