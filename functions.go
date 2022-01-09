@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"strings"
 )
 
 func greet(n string) {
@@ -33,9 +34,23 @@ func main() {
 	fmt.Println(a1, a2)
 	fmt.Printf("circle 1 is %0.3f and circle 2 is %0.2f \n", a1, a2)
 
+	// #10
+	fn, sn := getInitials("Revaz Gh")
+	fmt.Println(fn, sn)
 }
 
 // muliple return values
 func getInitials(n string) (string, string) {
+	s := strings.ToUpper(n)
+	words := strings.Split(s, " ")
+	var initials []string
+	for _, v := range words {
+		initials = append(initials, v[:1])
+	}
 
+	if len(initials) > 1 {
+		return initials[0], initials[1]
+	}
+
+	return initials[0], "_"
 }
