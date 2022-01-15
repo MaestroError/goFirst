@@ -5,6 +5,10 @@ import (
 	"os"
 )
 
+type doc interface {
+	format() string
+}
+
 type bill struct {
 	name  string
 	items map[string]float64
